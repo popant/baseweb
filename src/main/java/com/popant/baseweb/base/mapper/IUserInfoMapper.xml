@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.popant.baseweb.base.generator.mapper.UserInfoMapper" >
+  <!-- 用户登录验证查询 -->
+  <select id="authentication" resultMap="BaseResultMap" parameterType="map">
+    select
+    <include refid="Base_Column_List" />
+    from user_info
+    where user_name = #{record.userName,jdbcType=VARCHAR} and password = #{record.password,jdbcType=VARCHAR}
+  </select>
+</mapper>
